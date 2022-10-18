@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XKCD SUBSCRIPTION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="Subscriber/css/style.css">
+</head>
+<body>
+    <div class="center modal-box">
+        <div class="fas fa-envelope icon1"></div>
+        <header>XKCD SUBSCRIPTION</header>
+        <p>
+           Enter visitor's email address and emails them Random XKCD comics every five minutes!
+        </p>
+        <form action="">
+            <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email address" placeholder="E.g. Joilenden@gmail.com" required>
+            <input type="text" class="otp" name="otp" id="otp" placeholder="Enter 6 Digit OTP" minlength="10" maxlength="10" title="Please Enter 6 Digit OTP" required>
+            <b class="counter" for="">6</b>
+            <button>Send OTP <i class="fas fa-paper-plane"></i></button>
+         </form>
+    </div>
+</body>
+</html>
+
+<script>
+document.getElementById('otp').addEventListener('input', function (e) {
+  e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{1})/g, '$1 ').trim();
+});
+</script>
